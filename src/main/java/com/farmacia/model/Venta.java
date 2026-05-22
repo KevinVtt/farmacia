@@ -1,7 +1,8 @@
 package com.farmacia.model;
 
 
-import org.bson.types.ObjectId;
+import java.util.List;
+
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import lombok.Data;
@@ -11,7 +12,7 @@ import lombok.Data;
 public class Venta {
 
     @Id
-    private ObjectId id;
+    private Long id;
 
     private String formaDePago;
     private Integer numeroTicket;
@@ -19,7 +20,8 @@ public class Venta {
 
     private Empleado empleadoAtencion;
     private Empleado empleadoCaja;
-    private Sucursal sucursal;
+    // private Sucursal sucursal;
     private Cliente cliente;
+    private List<VentaDetalle> detallesVenta;
 
 }
